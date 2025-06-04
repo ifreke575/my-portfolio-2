@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .project {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 6px;
+      background: #fafafa;
+    }
+    .project h3 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      background: #222;
+      color: #aaa;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    span{
+        color: chocolate;
+    }
+    h1{
+        color: darkgreen;
+        font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>IFREKE</h1>
+    <p>Web Developer & Designer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>Hi, I'm <span>IFREKE</span>! I'm a passionate web developer with experience in building am also into im responsive and interactive websites using HTML, CSS, and JavaScript. I love transforming ideas into reality through code.</p>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects" id="projectList"></div>
+    <button onclick="loadProjects()">Load Projects</button>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ifreke575@gmail">ifreke575@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IFREKE INYANG. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function loadProjects() {
+      const projects = [
+        { title: "Portfolio Website", description: "A personal portfolio site showcasing my work and skills." },
+        { title: "Todo List App", description: "A task management app built with HTML, CSS, and JavaScript." },
+        { title: "Weather App", description: "Fetches weather data using an external API." }
+      ];
+
+      const projectList = document.getElementById('projectList');
+      projectList.innerHTML = '';
+
+      projects.forEach(proj => {
+        const div = document.createElement('div');
+        div.className = 'project';
+        div.innerHTML = `<h3>${proj.title}</h3><p>${proj.description}</p>`;
+        projectList.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
